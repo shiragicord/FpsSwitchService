@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FpsSwitchService</string>
+    <string name="permission_label_write_refresh_rate_setting">Modify refresh rate setting</string>
+</resources>

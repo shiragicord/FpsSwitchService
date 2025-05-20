@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <permission
+        android:name="io.github.shiragicord.fpsswitchservice.WRITE_REFRESH_RATE_SETTING"
+        android:label="@string/permission_label_write_refresh_rate_setting"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="io.github.shiragicord.fpsswitchservice.WRITE_REFRESH_RATE_SETTING" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FpsSwitchService">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FpsSwitchSettingService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote"
+            android:permission="io.github.shiragicord.fpsswitchservice.WRITE_REFRESH_RATE_SETTING">
+            <intent-filter>
+                <action android:name="io.github.shiragicord.fpsswitchservice.FpsSwitchSettingService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

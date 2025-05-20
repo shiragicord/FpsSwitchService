@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FpsSwitchService</string>
+    <string name="permission_label_write_refresh_rate_setting">リフレッシュレート設定の変更</string>
+</resources>
